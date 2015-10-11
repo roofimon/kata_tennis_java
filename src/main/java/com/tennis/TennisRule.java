@@ -14,13 +14,13 @@ public class TennisRule implements Rule {
         if (isStartGame(playerA, playerB)) {
             return "Love - Love";
         }
-        String winner = thereIsAWinner(playerA, playerB);
+        String winner = winnerIs(playerA, playerB);
         String normalScore = winner != null ? winner : score[playerA.getScore()] + " - " + score[playerB.getScore()];
         return normalScore;
     }
 
     private String deuceStateScore(Player playerA, Player playerB) {
-        String winner = thereIsAWinner(playerA, playerB);
+        String winner = winnerIs(playerA, playerB);
         if (winner != null){
             return winner;
         }else if(playerA.getScore()-playerB.getScore()==1){
@@ -31,7 +31,7 @@ public class TennisRule implements Rule {
         return "Deuce";
     }
 
-    private String thereIsAWinner(Player playerA, Player playerB) {
+    private String winnerIs(Player playerA, Player playerB) {
         if(playerBwinGame(playerA, playerB)) {
             return "Player B Win";
         }else if(playerAwinGame(playerA, playerB)) {
