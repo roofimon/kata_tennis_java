@@ -49,10 +49,10 @@ public class TennisRule implements Rule {
     }
 
     private boolean playerAwinGame(Player playerA, Player playerB) {
-        return playerA.getScore() >= 4 && Math.abs(playerA.getScore() - playerB.getScore()) == 2;
+        return playerA.getScore() >= 4 && playerA.getScore() > playerB.getScore() && Math.abs(playerA.getScore() - playerB.getScore()) == 2;
     }
 
     private boolean playerBwinGame(Player playerA, Player playerB) {
-        return playerB.getScore() >= 4 && Math.abs(playerA.getScore() - playerB.getScore()) == 2;
+        return playerB.getScore() >= 4 && playerB.getScore() > playerA.getScore() && Math.abs(playerA.getScore() - playerB.getScore()) == 2;
     }
 }

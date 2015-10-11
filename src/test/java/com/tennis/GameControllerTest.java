@@ -13,11 +13,12 @@ public class GameControllerTest {
     @Before
     public void setUp() {
         gameController = new GameController();
+        gameController.setGameRule(new TennisRule());
     }
 
     @Test
     public void gameStart() {
-        assertEquals("0 - All", gameController.displayScore());
+        assertEquals("Love - Love", gameController.displayScore());
     }
 
     @Test
