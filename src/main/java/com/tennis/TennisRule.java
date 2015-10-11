@@ -15,8 +15,8 @@ public class TennisRule implements Rule {
             return "Love - Love";
         }
         String winner = thereIsAWinner(playerA, playerB);
-        if (winner != null) return winner;
-        return score[playerA.getScore()] + " - " + score[playerB.getScore()];
+        String normalScore = winner != null ? winner : score[playerA.getScore()] + " - " + score[playerB.getScore()];
+        return normalScore;
     }
 
     private String deuceStateScore(Player playerA, Player playerB) {
